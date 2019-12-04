@@ -50,4 +50,5 @@ This is done first since the script to generate the `.ttl` files won't run with 
 
 ## Additional notes
 
+* Currently to run lv2 plugins on the Elk Pi you need to use the [lv2vst wrapper](https://github.com/elk-audio/lv2vst/tree/elk-headless-build)
 * For further compilation help. Look at our [documentation](https://github.com/elk-audio/elk-docs/blob/master/documents/building_plugins_for_elk.md).
