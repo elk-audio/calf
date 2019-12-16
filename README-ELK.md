@@ -23,7 +23,7 @@ This is done first since the script to generate the `.ttl` files won't run with 
 
    ```bash
    $ unset LD_LIBRARY_PATH
-   $ source /opt/elk-sika64-sdk/environment-setup-aarch64-elk-linux
+   $ source /path/to/environment-setup-cortexa7t2hf-neon-vfpv4-elk-linux-gnueabi
    ```
 
 2. Create a directory to build and install the cross compilation files to `$ mkdir build`.
@@ -31,7 +31,7 @@ This is done first since the script to generate the `.ttl` files won't run with 
 3. Generate the makefiles:
 
     ```bash
-    $ ./configure --host=aarch64-elk-linux-gnu --prefix=/absolute/path/to/calf/build
+    $ ./configure --host=arm-elk-linux-gnu --prefix=/absolute/path/to/calf/build
     ```
 
 4. Compile the plugin library:
