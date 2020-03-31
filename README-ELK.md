@@ -19,7 +19,7 @@ This is done first since the script to generate the `.ttl` files won't run with 
 4. `make clean` to prepare for cross compilation.
 
 ### Cross Compile the plugins
-1. Set up the cross-compilation toolchain:  
+1. Set up the cross-compilation toolchain:
 
    ```bash
    $ unset LD_LIBRARY_PATH
@@ -31,7 +31,10 @@ This is done first since the script to generate the `.ttl` files won't run with 
 3. Generate the makefiles:
 
     ```bash
+    # for raspberry pi 3
     $ ./configure --host=arm-elk-linux-gnu --prefix=/absolute/path/to/calf/build
+    # for raspberry pi 4
+    $ ./configure --host=aarch64-elk-linux-gnu --prefix=/absolute/path/to/calf/build
     ```
 
 4. Compile the plugin library:
@@ -41,14 +44,13 @@ This is done first since the script to generate the `.ttl` files won't run with 
     ```
 
 5. move the .ttl files to the cross compiled build.
-    
+
     ```bash
     $ cp native/lib/lv2/calf.lv2/*.ttl build/lib/lv2/calf.lv2/
     ```
 
-6. move the folder build/lib/calf.lv2 to the desired location on the Elk Pi. Make sure the path to the parent folder is in the `LV2_PATH` variable.
+6. move the folder build/lib/lv2/calf.lv2 to the desired location on the Elk Pi. Make sure the path to the parent folder is in the `LV2_PATH` variable.
 
 ## Additional notes
 
-* Currently to run lv2 plugins on the Elk Pi you need to use the [lv2vst wrapper](https://github.com/elk-audio/lv2vst/tree/elk-headless-build)
 * For further compilation help. Look at our [documentation](https://github.com/elk-audio/elk-docs/blob/master/documents/building_plugins_for_elk.md).
